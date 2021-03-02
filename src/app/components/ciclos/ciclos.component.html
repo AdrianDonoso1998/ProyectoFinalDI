@@ -1,0 +1,54 @@
+
+<h1>
+Los ciclos tecnológicos son
+</h1>
+<div class="row">
+  <div class="col">
+<h2>DAM</h2>
+
+<h3>Asignaturas:</h3>
+<ul class="list-group">
+  <li class="list-group-item" *ngFor="let item of pintarAsignaturaDaw">
+    {{item.nombre}}
+  </li>
+</ul>
+  </div>
+
+
+  <div class="col">
+<h2>DAW</h2>
+
+<h3>Asignaturas:</h3>
+<ul class="list-group">
+  <li class="list-group-item" *ngFor="let item of pintarAsignaturaDam" >
+    {{item.nombre}}
+  </li>
+</ul>
+  </div>
+
+
+</div>
+
+
+<div class="row">
+  <div class="col" *ngFor="let itemCiclos of pintarCiclos">
+    <div class="card" style="width: 18rem">
+      <div class="card-body">
+        <img class="card-img-top" [src]="itemCiclos.imagen" style = "width: 13rem; height: 7rem;">
+        <h2>
+          {{itemCiclos.nombre}} {{itemCiclos.curso}}
+        </h2>
+        <a class="btn btn-primary btn-lg mt-3" role="button" style="width: 8rem;height:3rem">Ver detalle</a>
+        
+       
+      </div>
+  </div>
+</div>
+
+</div>
+
+
+  
+
+
+

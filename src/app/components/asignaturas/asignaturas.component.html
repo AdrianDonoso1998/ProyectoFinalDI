@@ -1,0 +1,59 @@
+<div class="row">
+  <div class="col">
+    <p>Filtrar por nombre:</p>
+    <input type="text" placeholder= "Introduce el nombre" class="form-control" #contenidoNombre >
+    <br>
+    <button class="btn btn-primary" style="width: 20rem;"(click)="buscarAsignaturas(contenidoNombre.value)">Filtrar</button>
+  </div>
+
+  <div class="col">
+    <p>Filtrar por ciclos:</p>
+    <input type="text" placeholder= "Introduce el ciclo" class="form-control" #contenidoCiclo>
+    <br>
+    <button class="btn btn-primary" style="width: 20rem;"(click)="buscarCiclos(contenidoCiclo.value)">Filtrar</button>
+  </div>
+  <div class="col">
+    <p>Filtrar por conocimientos:</p>
+    <input type="text" placeholder= "Introduce los conocimientos" class="form-control" #contenidoConocimientos>
+    <br>
+    <button class="btn btn-primary" style="width: 20rem;"(click)="buscarConocimientos(contenidoConocimientos.value)">Filtrar</button>
+  </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col"></div>
+  </div>
+  
+  <br>
+  <br>
+  <div class="row">
+    <div class="col" *ngFor="let asignatura of asignaturasArrayBusqueda">
+      <!-- repetido tantas veces como elementos tenga asignaturasPintar -->
+      <div class="card" style="width: 18rem">
+        <div class="card-body">
+          <h2>
+            {{asignatura.nombre}}
+      
+          </h2>
+          <p>Profesor:{{asignatura.profesor}}</p>
+          <p>Ciclo:{{asignatura.ciclo}}</p>
+          <p>Curso:{{asignatura.curso}}</p>
+          <div *ngFor="let foto of asignatura.conocimientos">
+            <img class="card-img-top" [src]="foto.imagen" style = "width: 3rem; height: 3rem;">
+          </div>
+         
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
+<h2>Las asignaturas son:</h2>
+<!-- NG FOR SOBRE DATOS DE ASIGNATURAS (SERVICIO) -->
+
+<div class="row">
+  <div class="col" *ngFor="let item of asignaturasPintar">
+    <!-- repetido tantas veces como elementos tenga asignaturasPintar -->
+    <app-asignatura [asignatura]="item"></app-asignatura>
+  </div>
+</div>
